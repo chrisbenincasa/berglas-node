@@ -7,7 +7,7 @@ Node library to interact with [Berglas](https://github.com/GoogleCloudPlatform/b
 ## Installation
 
 ```
-yarn add chrisbenincasa/node-berglas
+yarn add berglas-node
 ```
 
 # Use Case
