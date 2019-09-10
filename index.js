@@ -85,4 +85,4 @@ const substitute = async projectId => {
   }
 };
 
-export { resolve, substitute };
+module.exports = { resolve, substitute };
