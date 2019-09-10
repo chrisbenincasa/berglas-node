@@ -1,6 +1,7 @@
-import { Storage } from "@google-cloud/storage";
-import { KeyManagementServiceClient } from "@google-cloud/kms";
-import crypto from "crypto";
+const Storage = require("@google-cloud/storage").Storage;
+const KeyManagementServiceClient = require("@google-cloud/kms")
+  .KeyManagementServiceClient;
+const crypto = require("crypto");
 
 const BERGLAS_PREFIX = "berglas://";
 const METADATA_KMS_KEY = "berglas-kms-key";
