@@ -1,6 +1,6 @@
 {
   "name": "berglas-node",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Node library for decrypting Berglas secrets",
   "main": "index.js",
   "repository": "https://github.com/chrisbenincasa/berglas-node",
