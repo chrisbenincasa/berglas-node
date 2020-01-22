@@ -73,15 +73,14 @@ const resolve = async (projectId, secretName) => {
  * @param {string} projectId
  */
 const substitute = async projectId => {
-  for (const envvar in process.env) {
-    if (
-      process.env.hasOwnProperty(envvar) &&
-      process.env[envvar].startsWith(BERGLAS_PREFIX)
-    ) {
-      const element = process.env[envvar];
-      let decrypted = await resolve(projectId, element);
-      process.env[envvar] = decrypted;
-    }
+  const resolved = await Promise.all(
+    Object.entries(process.env)
+      .filter(([_, element]) => element.startsWith(BERGLAS_PREFIX))
+      .map(async ([key, element]) => [key, await resolve(projectId, element)])
+  );
+
+  for (const [key, element] of resolved) {
+    process.env[key] = element;
   }
 };
 
