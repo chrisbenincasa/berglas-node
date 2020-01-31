@@ -36,7 +36,8 @@ const resolve = async (projectId, secretName) => {
     sanitizedName = sanitizedName.substring(BERGLAS_PREFIX.length);
   }
 
-  let [bucket, object] = sanitizedName.split("/", 2);
+  let chunks = sanitizedName.split("/");
+  let [bucket, object] = [chunks.shift(), chunks.join('/')];
 
   // Read the blob from storage
   const storageClient = new Storage({
