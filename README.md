@@ -1,3 +1,5 @@
+
+
 # Overview
 
 Node library to interact with [Berglas](https://github.com/GoogleCloudPlatform/berglas)-managed secrets in Google Cloud Platform.
@@ -54,7 +56,7 @@ funcThatNeedsSecret();
 import { substitute } from "berglas-node";
 
 async function main() {
-  await substitute();
+  await substitute(PROJECT_ID);
 
   // Run application, pulling secrets from environvment vars
   // After: process.env.FOO=bar
